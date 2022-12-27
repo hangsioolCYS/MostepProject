@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.raiting.RaitingDetailFragment">
+
+    <data>
+
+        <variable
+            name="recordViewModel"
+            type="com.example.sse_user.view.viewModel.RecordViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/register_left"
+            app:layout_constraintBottom_toBottomOf="@+id/top_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_bold"
+            android:text="등급"
+            android:textColor="#0064c8"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/back_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/back_iv" />
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginTop="60dp"
+            android:background="#cccccc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scroll_const_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/my_rating_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="내 등급"
+                    android:textColor="#222222"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/user_graph_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/raiting_detail_background_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_rating_tv" />
+
+                <LinearLayout
+                    android:id="@+id/user_step_gage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_graph_v"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <View
+                        android:id="@+id/stick_1"
+                        android:layout_width="56dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_2"
+                        android:layout_width="56dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_3"
+                        android:layout_width="56dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_4"
+                        android:layout_width="56dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_5"
+                        android:layout_width="56dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/exercise_remain_number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="@{recordViewModel.exerciseCountText + `회 남음`}"
+                    android:textColor="#444444"
+                    app:layout_constraintEnd_toEndOf="@+id/user_step_gage"
+                    app:layout_constraintTop_toBottomOf="@+id/user_step_gage" />
+
+
+                <ImageView
+                    android:id="@+id/grade_icon_IV"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_graph_v"
+                    app:layout_constraintTop_toTopOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:id="@+id/grade_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:gravity="center"
+                    android:textColor="#0064c8"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/grade_icon_IV"
+                    app:layout_constraintStart_toStartOf="@+id/grade_icon_IV"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_icon_IV"
+                    app:layout_goneMarginTop="3dp" />
+
+                <TextView
+                    android:id="@+id/exercise_number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/lato_black"
+                    android:text="@{recordViewModel.totalExerciseCount}"
+                    android:textColor="#0064c8"
+                    android:textSize="50dp"
+                    app:layout_constraintStart_toStartOf="@+id/user_graph_v"
+                    app:layout_constraintTop_toTopOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="총 운동 횟수"
+                    android:textColor="#666666"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_number_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_number_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_rating_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="25dp"
+                    android:background="#CCCCCC"
+                    app:layout_constraintTop_toBottomOf="@+id/user_graph_v" />
+
+                <View
+                    android:id="@+id/bottom_view_rating_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="11dp"
+                    android:background="#F5F5F5"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_rating_graph" />
+
+                <TextView
+                    android:id="@+id/rating_list_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="등급 목록"
+                    android:textColor="#222222"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_rating_graph" />
+
+                <View
+                    android:id="@+id/bottom_line_rating_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/rating_list_tv" />
+
+                <ImageView
+                    android:id="@+id/grade_w_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/grade_list_w"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_rating_list" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="화이트"
+                    android:textColor="#222222"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/grade_w_iv"
+                    app:layout_constraintStart_toEndOf="@+id/grade_w_iv"
+                    app:layout_constraintTop_toTopOf="@+id/grade_w_iv" />
+
+                <View
+                    android:id="@+id/bottom_line_grade_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_w_iv" />
+
+                <ImageView
+                    android:id="@+id/grade_y_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/grade_list_y"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_grade_w" />
+
+                <TextView
+                    android:id="@+id/grade_y_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="옐로우"
+                    android:textColor="#222222"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/grade_y_iv"
+                    app:layout_constraintTop_toTopOf="@+id/grade_y_iv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="운동횟수 100회 달성"
+                    android:textColor="#888888"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@+id/grade_y_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_y_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_grade_y"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_y_iv" />
+
+                <ImageView
+                    android:id="@+id/grade_s_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/grade_list_s"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_grade_y" />
+
+                <TextView
+                    android:id="@+id/grade_s_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="스카이"
+                    android:textColor="#222222"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/grade_s_iv"
+                    app:layout_constraintTop_toTopOf="@+id/grade_s_iv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="운동횟수 500회 달성"
+                    android:textColor="#888888"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@+id/grade_s_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_s_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_grade_s"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_s_iv" />
+
+                <ImageView
+                    android:id="@+id/grade_b_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/grade_list_b"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_grade_s" />
+
+                <TextView
+                    android:id="@+id/grade_b_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="블루"
+                    android:textColor="#222222"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/grade_b_iv"
+                    app:layout_constraintTop_toTopOf="@+id/grade_b_iv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="운동횟수 2000회 달성"
+                    android:textColor="#888888"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@+id/grade_b_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_b_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_grade_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_b_iv" />
+
+                <ImageView
+                    android:id="@+id/grade_m_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/grade_list_m"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_grade_b" />
+
+                <TextView
+                    android:id="@+id/grade_m_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="마스터"
+                    android:textColor="#222222"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/grade_m_iv"
+                    app:layout_constraintTop_toTopOf="@+id/grade_m_iv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="운동횟수 10000회 달성"
+                    android:textColor="#888888"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@+id/grade_m_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_m_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_grade_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_m_iv" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:background="#f5f5f5"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_grade_m" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

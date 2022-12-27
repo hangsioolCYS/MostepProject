@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="tenantloginfragment"
+            type="com.example.sse_user.view.ui.login.LoginTenantFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        tools:context=".view.ui.login.LoginTenantFragment">
+
+        <TextView
+            android:id="@+id/mostep_tv"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:fontFamily="@font/gotham_black"
+            android:gravity="center"
+            android:text="MOSTEP"
+            android:textColor="#1949D8"
+            android:textSize="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/for_trainer_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="for Trainer"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/mostep_tv"
+            app:layout_constraintStart_toStartOf="@+id/mostep_tv"
+            app:layout_constraintTop_toBottomOf="@+id/mostep_tv" />
+
+
+        <EditText
+            android:id="@+id/tenant_id_et"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_ddddd_fffff"
+            android:fontFamily="@font/pretendard_semibold"
+            android:hint="기관코드를 입력해주세요."
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#aaaaaa"
+            android:textSize="19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/for_trainer_tv" />
+
+        <ImageView
+            android:id="@+id/tenant_id_check_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/x_fff84646_img"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tenant_id_et"
+            app:layout_constraintEnd_toEndOf="@+id/tenant_id_et"
+            app:layout_constraintTop_toTopOf="@+id/tenant_id_et" />
+
+        <TextView
+            android:id="@+id/tenant_id_detail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="입력하신 정보와 맞는 기관코드가 없습니다."
+            android:textColor="#F84646"
+            android:textSize="12dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tenant_id_et" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_btn"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_radious_5076e8_5076e8"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center"
+            android:onClick="@{() -> tenantloginfragment.tenantCheckBtnClicked()}"
+            android:text="인증하기"
+            android:textColor="#fff639"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/tenant_id_et"
+            app:layout_constraintStart_toStartOf="@id/tenant_id_et"
+            app:layout_constraintTop_toBottomOf="@id/tenant_id_detail_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.deleteAccount.DeleteAccountFragment">
+
+    <data
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/register_left"
+            app:layout_constraintBottom_toBottomOf="@+id/main_logo_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_logo_tv" />
+
+        <TextView
+            android:id="@+id/main_logo_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/notosans_bold"
+            android:text="탈퇴하기"
+            android:textColor="#0064c8"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/bottom_line_main_logo_v"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginTop="15dp"
+            android:background="#CCCCCC"
+            app:layout_constraintTop_toBottomOf="@+id/main_logo_tv" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_line_main_logo_v">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scroll_const_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/logo_iv"
+                    android:layout_width="192dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/mostep_txt2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/scroll_const_layout" />
+
+                <EditText
+                    android:id="@+id/id_et"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="46dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/id_edit_text"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:hint="아이디"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="15dp"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_iv" />
+
+                <EditText
+                    android:id="@+id/pw_et"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/id_edit_text"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:hint="비밀번호"
+                    android:inputType="textPassword"
+                    android:paddingLeft="15dp"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/id_et" />
+
+                <ImageView
+                    android:id="@+id/pw_eye_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/password_eye"
+                    app:layout_constraintBottom_toBottomOf="@+id/pw_et"
+                    app:layout_constraintEnd_toEndOf="@+id/pw_et"
+                    app:layout_constraintTop_toTopOf="@+id/pw_et" />
+
+                <TextView
+                    android:id="@+id/choice_delete_account_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/id_edit_text"
+                    android:fontFamily="@font/notosans_medium"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="탈퇴 사유 선택"
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pw_et" />
+
+                <EditText
+                    android:id="@+id/delete_reason_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/id_edit_text"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|center"
+                    android:hint="어떤 점이 불편하셨나요?(직접 입력)"
+                    android:paddingLeft="15dp"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/choice_delete_account_tv" />
+
+                <View
+                    android:id="@+id/bottom_view"
+                    android:layout_width="0dp"
+                    android:layout_height="330dp"
+                    android:layout_marginTop="100dp"
+                    android:background="#F5F5F5"
+                    app:layout_constraintBottom_toTopOf="@+id/delete_account_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/choice_delete_account_tv" />
+
+                <TextView
+                    android:id="@+id/top_text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="회원탈퇴 유의사항"
+                    android:textColor="#222222"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@id/bottom_view"
+                    app:layout_constraintTop_toTopOf="@id/bottom_view" />
+
+                <TextView
+                    android:id="@+id/first_coments_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="탈퇴 시 회원님의 이용정보가 삭제되며 복구가 불가능\n하오니 신중히 선택하시기 바랍니다."
+                    android:textColor="#888888"
+                    app:layout_constraintStart_toStartOf="@+id/top_text_1"
+                    app:layout_constraintTop_toBottomOf="@+id/top_text_1" />
+
+                <TextView
+                    android:id="@+id/top_text_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="회원 정보 삭제"
+                    android:textColor="#222222"
+                    android:textSize="17dp"
+                    app:layout_constraintStart_toStartOf="@+id/top_text_1"
+                    app:layout_constraintTop_toBottomOf="@+id/first_coments_tv" />
+
+                <TextView
+                    android:id="@+id/second_coments_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="회원 탈퇴와 함께 등록된 모든 개인정보는 삭제, 폐기\n처리되며 복구되지 않습니다.\n회원탈퇴 시 동일 아이디로 재가입 하실 수 없습니다.
+                                 \n단, 상법 및 '전자상거래 등에서 소비자 보호에 관한 법률'등\n관련 법령의 규정에 의하여 다음과 같이 ‘거래 관련 관리의무\n관계 확인’
+ 등을 이유로 일정기간 보관 됩니다.\n- 계약 또는 청약철회 등에 관한 기록 : 5년\n- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년"
+                    android:textColor="#888888"
+                    app:layout_constraintStart_toStartOf="@+id/top_text_1"
+                    app:layout_constraintTop_toBottomOf="@+id/top_text_2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/choice_delete_account_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="280dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/id_edit_text"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/choice_delete_account_tv">
+
+                    <TextView
+                        android:id="@+id/choice_delete_account_tv_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/notosans_medium"
+                        android:text="탈퇴 사유 선택"
+                        android:textColor="#666666"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/choice_bottom_line_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:background="#CCCCCC"
+                        app:layout_constraintTop_toBottomOf="@+id/choice_delete_account_tv_2" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        android:weightSum="5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/choice_bottom_line_v">
+
+                        <LinearLayout
+                            android:id="@+id/choice_1_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:text="앱이 사용하기 불편해요."
+                                android:textColor="#aaaaaa"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/choice_2_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:text="서비스가 너무 적어요."
+                                android:textColor="#aaaaaa"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/choice_3_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:text="이제는 이 운동을 안해요."
+                                android:textColor="#aaaaaa"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/choice_4_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:text="다른 앱을 사용중이에요."
+                                android:textColor="#aaaaaa"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/choice_5_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:text="기타"
+                                android:textColor="#aaaaaa"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/delete_account_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#dddddd"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="center"
+                    android:text="탈퇴하기"
+                    android:textColor="#888888"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

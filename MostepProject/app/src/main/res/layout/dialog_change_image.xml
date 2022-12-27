@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/change_image_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="339dp"
+            android:layout_height="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/change_profile_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/notosans_medium"
+                android:text="프로필 사진 변경"
+                android:textColor="#222222"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/first_view"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="23dp"
+                android:background="#dddddd"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_tv" />
+
+            <View
+                android:id="@+id/change_album_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/second_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/first_view" />
+
+            <TextView
+                android:id="@+id/change_album_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_regular"
+                android:text="앨범에서 사진 선택"
+                android:textColor="#666666"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/second_view"
+                app:layout_constraintStart_toStartOf="@+id/change_profile_tv"
+                app:layout_constraintTop_toBottomOf="@+id/first_view" />
+
+            <View
+                android:id="@+id/second_view"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#dddddd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/first_view" />
+
+            <View
+                android:id="@+id/change_default_image_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/second_view" />
+
+            <TextView
+                android:id="@+id/change_default_image_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_regular"
+                android:text="기본 이미지로 변경"
+                android:textColor="#666666"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/change_profile_tv"
+                app:layout_constraintTop_toBottomOf="@+id/second_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

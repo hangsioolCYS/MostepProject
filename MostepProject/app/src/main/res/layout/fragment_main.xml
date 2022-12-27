@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.main.MainFragment">
+
+    <data>
+
+        <import type="android.R" />
+
+        <variable
+            name="viewModel"
+            type="com.example.sse_user.view.viewModel.MainViewModel" />
+
+        <variable
+            name="mainFragment"
+            type="com.example.sse_user.view.ui.main.MainFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/main_logo_tv"
+                    android:layout_width="91dp"
+                    android:layout_height="16.2dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/main_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_main_logo_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#CCCCCC"
+                    app:layout_constraintTop_toBottomOf="@+id/main_logo_tv" />
+
+                <TextView
+                    android:id="@+id/user_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:textColor="#222222"
+                    android:textSize="26dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_main_logo_v" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="님"
+                    android:textColor="#AAAAAA"
+                    android:textSize="26dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_name_tv"
+                    app:layout_constraintStart_toEndOf="@+id/user_name_tv"
+                    app:layout_constraintTop_toTopOf="@+id/user_name_tv" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/rating_detail_go_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/id_edit_text"
+                    android:fontFamily="@font/notosans_bold"
+                    android:onClick="@{() -> mainFragment.moveOnGradeFragment()}"
+                    android:text="등급 상세"
+                    android:textColor="#888888"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/user_name_tv" />
+
+                <TextView
+                    android:id="@+id/user_gender_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@+id/user_name_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/user_name_tv" />
+
+                <TextView
+                    android:id="@+id/first_slash_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text=" / "
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_gender_tv"
+                    app:layout_constraintStart_toEndOf="@+id/user_gender_tv"
+                    app:layout_constraintTop_toTopOf="@+id/user_gender_tv" />
+
+                <TextView
+                    android:id="@+id/user_age_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_slash_tv"
+                    app:layout_constraintStart_toEndOf="@+id/first_slash_tv"
+                    app:layout_constraintTop_toTopOf="@+id/first_slash_tv" />
+
+                <TextView
+                    android:id="@+id/second_slash_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text=" / "
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_age_tv"
+                    app:layout_constraintStart_toEndOf="@+id/user_age_tv"
+                    app:layout_constraintTop_toTopOf="@+id/user_age_tv" />
+
+                <TextView
+                    android:id="@+id/user_location_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:textColor="#666666"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_slash_tv"
+                    app:layout_constraintStart_toEndOf="@+id/second_slash_tv"
+                    app:layout_constraintTop_toTopOf="@+id/second_slash_tv" />
+
+                <View
+                    android:id="@+id/user_graph_v"
+                    android:layout_width="372dp"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_location_tv" />
+
+                <LinearLayout
+                    android:id="@+id/user_step_gage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@+id/user_graph_v"
+                    app:layout_constraintTop_toTopOf="@+id/user_graph_v">
+
+                    <View
+                        android:id="@+id/stick_1"
+                        android:layout_width="47dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_2"
+                        android:layout_width="47dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_3"
+                        android:layout_width="47dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_4"
+                        android:layout_width="47dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                    <View
+                        android:id="@+id/stick_5"
+                        android:layout_width="47dp"
+                        android:layout_height="4dp"
+                        android:layout_marginEnd="2dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/exercise_remain_number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:textColor="#444444"
+                    app:layout_constraintStart_toStartOf="@+id/user_step_gage"
+                    app:layout_constraintTop_toBottomOf="@+id/user_step_gage" />
+
+
+                <ImageView
+                    android:id="@+id/grade_icon_IV"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="26dp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_graph_v"
+                    app:layout_constraintTop_toTopOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:id="@+id/grade_TV"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:gravity="center"
+                    android:textColor="#0064c8"
+                    app:layout_constraintEnd_toEndOf="@+id/grade_icon_IV"
+                    app:layout_constraintStart_toStartOf="@+id/grade_icon_IV"
+                    app:layout_constraintTop_toBottomOf="@+id/grade_icon_IV"
+                    app:layout_goneMarginTop="3dp" />
+
+                <TextView
+                    android:id="@+id/user_accuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="#222222"
+                    android:textSize="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:id="@+id/user_accuracy_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="평균 정확도 (%)"
+                    android:textColor="#BBBBBB"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_accuracy"
+                    app:layout_constraintStart_toStartOf="@+id/user_accuracy"
+                    app:layout_constraintTop_toBottomOf="@+id/user_accuracy" />
+
+                <View
+                    android:id="@+id/first_big_vertical_slash"
+                    android:layout_width="1dp"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="#cccccc"
+                    app:layout_constraintStart_toEndOf="@+id/user_accuracy_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:id="@+id/user_penance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="37dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="#222222"
+                    android:textSize="30dp"
+                    app:layout_constraintStart_toEndOf="@+id/first_big_vertical_slash"
+                    app:layout_constraintTop_toTopOf="@+id/user_accuracy" />
+
+                <TextView
+                    android:id="@+id/user_penance_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="평균보속 (초)"
+                    android:textColor="#BBBBBB"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_penance"
+                    app:layout_constraintStart_toStartOf="@+id/user_penance"
+                    app:layout_constraintTop_toBottomOf="@+id/user_penance" />
+
+                <View
+                    android:id="@+id/second_big_vertical_slash"
+                    android:layout_width="1dp"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="#cccccc"
+                    app:layout_constraintStart_toEndOf="@+id/user_penance_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/user_graph_v" />
+
+                <TextView
+                    android:id="@+id/user_total_workout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="37dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="#222222"
+                    android:textSize="30dp"
+                    app:layout_constraintStart_toEndOf="@+id/second_big_vertical_slash"
+                    app:layout_constraintTop_toTopOf="@+id/user_accuracy" />
+
+                <TextView
+                    android:id="@+id/user_total_workout_number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text=" 백"
+                    android:textColor="#222222"
+                    android:textSize="30dp"
+                    app:layout_constraintStart_toEndOf="@+id/user_total_workout"
+                    app:layout_constraintTop_toTopOf="@+id/user_accuracy" />
+
+                <TextView
+                    android:id="@+id/user_total_workout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="총 운동 횟수 (회)"
+                    android:textColor="#BBBBBB"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_total_workout_number_tv"
+                    app:layout_constraintStart_toStartOf="@+id/user_total_workout"
+                    app:layout_constraintTop_toBottomOf="@+id/user_total_workout" />
+
+                <View
+                    android:id="@+id/first_bottom_background_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="#F4F4F4"
+                    app:layout_constraintTop_toBottomOf="@+id/user_total_workout_tv" />
+
+                <TextView
+                    android:id="@+id/today_class_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/first_bottom_background_v" />
+
+                <TextView
+                    android:id="@+id/today_class_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="오늘의 수업"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/today_class_date_tv"
+                    app:layout_constraintStart_toEndOf="@+id/today_class_date_tv"
+                    app:layout_constraintTop_toTopOf="@+id/today_class_date_tv" />
+
+                <ImageView
+                    android:id="@+id/today_class_go_iv"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/icon1"
+                    app:layout_constraintBottom_toBottomOf="@+id/today_class_date_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/today_class_date_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_today_class_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#CCCCCC"
+                    app:layout_constraintTop_toBottomOf="@+id/today_class_date_tv" />
+
+                <TextView
+                    android:id="@+id/today_class_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:textColor="#0164C8"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="@+id/bottom_line_today_class_v"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_today_class_v" />
+
+                <TextView
+                    android:id="@+id/pattern_type_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:textColor="#888888"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/today_class_title_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/today_class_title_tv" />
+
+                <TextView
+                    android:id="@+id/first_small_vertical_slash"
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="#AAAAAA"
+                    app:layout_constraintBottom_toBottomOf="@+id/pattern_type_tv"
+                    app:layout_constraintStart_toEndOf="@+id/pattern_type_tv"
+                    app:layout_constraintTop_toTopOf="@+id/pattern_type_tv" />
+
+
+                <TextView
+                    android:id="@+id/trainer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="트레이너: "
+                    android:textColor="#888888"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@id/first_small_vertical_slash"
+                    app:layout_constraintTop_toTopOf="@+id/pattern_type_tv" />
+
+                <TextView
+                    android:id="@+id/trainer_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:textColor="#888888"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@id/trainer_name"
+                    app:layout_constraintTop_toTopOf="@+id/pattern_type_tv" />
+
+                <TextView
+                    android:id="@+id/not_found_class_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:gravity="center"
+                    android:text="오늘의 수업이 존재하지 않습니다."
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/second_bottom_background_v"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bottom_line_today_class_v" />
+
+                <View
+                    android:id="@+id/second_bottom_background_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="40dp"
+                    android:background="#F4F4F4"
+                    app:layout_constraintTop_toBottomOf="@+id/trainer_name_tv" />
+
+                <TextView
+                    android:id="@+id/notice_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="공지사항"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/second_bottom_background_v" />
+
+                <ImageView
+                    android:id="@+id/notice_go_iv"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="@{() -> mainFragment.moveOnNoticeFragment()}"
+                    android:src="@drawable/icon1"
+                    app:layout_constraintBottom_toBottomOf="@+id/notice_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/notice_tv" />
+
+                <View
+                    android:id="@+id/bottom_line_notice_class_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#CCCCCC"
+                    app:layout_constraintTop_toBottomOf="@+id/notice_tv" />
+
+                <TextView
+                    android:id="@+id/recent_notice_tv_1"
+                    android:layout_width="252dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosans_medium"
+                    android:maxLines="1"
+                    android:textColor="#444444"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/notice_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_notice_class_v" />
+
+                <ImageView
+                    android:id="@+id/new_check_iv_1"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/new_check_sign_img"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/recent_notice_tv_1"
+                    app:layout_constraintStart_toEndOf="@+id/recent_notice_tv_1"
+                    app:layout_constraintTop_toTopOf="@+id/recent_notice_tv_1" />
+
+                <TextView
+                    android:id="@+id/notice_date_tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="#888888"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/recent_notice_tv_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/recent_notice_tv_1" />
+
+                <View
+                    android:id="@+id/bottm_line_notice_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="22dp"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@+id/recent_notice_tv_1" />
+
+                <TextView
+                    android:id="@+id/recent_notice_tv_2"
+                    android:layout_width="252dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosans_medium"
+                    android:maxLines="1"
+                    android:textColor="#444444"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/notice_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/bottm_line_notice_v" />
+
+                <ImageView
+                    android:id="@+id/new_check_iv_2"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/new_check_sign_img"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/recent_notice_tv_2"
+                    app:layout_constraintStart_toEndOf="@+id/recent_notice_tv_2"
+                    app:layout_constraintTop_toTopOf="@+id/recent_notice_tv_2" />
+
+                <TextView
+                    android:id="@+id/notice_date_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="#888888"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/recent_notice_tv_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/recent_notice_tv_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="22dp"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@+id/recent_notice_tv_2" />
+
+                <TextView
+                    android:id="@+id/not_found_notice_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_regular"
+                    android:gravity="center"
+                    android:text="공지사항이 존재하지 않습니다. "
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bottom_line_notice_class_v" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

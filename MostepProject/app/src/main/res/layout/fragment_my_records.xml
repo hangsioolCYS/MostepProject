@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.myRecord.MyRecordsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/register_left"
+            app:layout_constraintBottom_toBottomOf="@+id/top_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_bold"
+            android:text="내 기록"
+            android:textColor="#0064c8"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/back_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/back_iv" />
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginTop="60dp"
+            android:background="#cccccc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scroll_const_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <View
+                    android:id="@+id/top_text_view_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="#F9F9F9"
+                    android:fontFamily="@font/notosans_bold"
+                    android:textColor="#000000"
+                    app:layout_constraintTop_toTopOf="@+id/scroll_const_layout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="기본 프로필"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/top_text_view_v"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/top_text_view_v" />
+
+                <View
+                    android:id="@+id/top_view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/top_text_view_v" />
+
+                <TextView
+                    android:id="@+id/class_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="클래스"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_class"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/top_view_2" />
+
+                <TextView
+                    android:id="@+id/class_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="기초를 위한 초급자반"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/class_tv" />
+
+                <View
+                    android:id="@+id/bottom_view_class"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="57dp"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@+id/top_view_2" />
+
+                <TextView
+                    android:id="@+id/difficulty_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="난이도"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_difficulty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottom_view_class" />
+
+                <TextView
+                    android:id="@+id/difficulty_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="초급1-01"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/difficulty_tv" />
+
+                <View
+                    android:id="@+id/bottom_view_difficulty"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="57dp"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_class" />
+
+                <TextView
+                    android:id="@+id/walk_speed_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="평균보속"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_walk_speed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottom_view_difficulty" />
+
+                <TextView
+                    android:id="@+id/walk_speed_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="10.23초"
+                    android:textColor="#0164c8"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/walk_speed_tv" />
+
+                <View
+                    android:id="@+id/bottom_view_walk_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="57dp"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_difficulty" />
+
+                <TextView
+                    android:id="@+id/accuracy_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="정확도"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_accuracy"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottom_view_walk_speed" />
+
+                <TextView
+                    android:id="@+id/accuracy_name__tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="63%"
+                    android:textColor="#0164c8"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/accuracy_tv" />
+
+                <View
+                    android:id="@+id/bottom_view_accuracy"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="57dp"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_walk_speed" />
+
+                <TextView
+                    android:id="@+id/profile_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="신장"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottom_view_accuracy" />
+
+                <TextView
+                    android:id="@+id/current_weight_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="67kg"
+                    android:textColor="#888888"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottom_view_profile"
+                    app:layout_constraintStart_toEndOf="@+id/profile_text_tv"
+                    app:layout_constraintTop_toTopOf="@+id/bottom_view_accuracy" />
+
+                <TextView
+                    android:id="@+id/current_weight_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="현재 체중"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    app:layout_constraintRight_toLeftOf="@+id/height_tv"
+                    app:layout_constraintTop_toTopOf="@+id/profile_text_tv" />
+
+                <TextView
+                    android:id="@+id/height_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="171.3cm"
+                    android:textColor="#888888"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/current_weight_tv" />
+
+                <View
+                    android:id="@+id/bottom_view_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="57dp"
+                    android:background="#F4F4F4"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_accuracy" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/deactivate_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="34.5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/corners_5_back_fff_stroke_06dp_888"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_view_profile" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/recent_exercise_history_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="0dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/notosans_regular"
+                    android:gravity="center"
+                    android:text="최근 운동 내역"
+                    android:textColor="#888888"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/deactivate_layout"
+                    app:layout_constraintStart_toStartOf="@+id/deactivate_layout"
+                    app:layout_constraintTop_toTopOf="@+id/deactivate_layout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/recent_health_history_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/notosans_regular"
+                    android:gravity="center"
+                    android:text="최근 건강 기록"
+                    android:textColor="#888888"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/deactivate_layout"
+                    app:layout_constraintEnd_toEndOf="@+id/deactivate_layout"
+                    app:layout_constraintTop_toTopOf="@+id/deactivate_layout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/activate_recent_exercise_history_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/corners_5_back_0064c8"
+                    android:fontFamily="@font/notosans_bold"
+                    android:gravity="center"
+                    android:text="최근 운동 내역"
+                    android:textColor="#fff500"
+                    android:textSize="15dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/deactivate_layout"
+                    app:layout_constraintStart_toStartOf="@+id/deactivate_layout"
+                    app:layout_constraintTop_toTopOf="@+id/deactivate_layout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/activate_recent_health_history_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/corners_5_back_0064c8"
+                    android:fontFamily="@font/notosans_bold"
+                    android:gravity="center"
+                    android:text="최근 건강 기록"
+                    android:textColor="#fff500"
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/deactivate_layout"
+                    app:layout_constraintEnd_toEndOf="@+id/deactivate_layout"
+                    app:layout_constraintTop_toTopOf="@+id/deactivate_layout" />
+
+
+                <View
+                    android:id="@+id/bottom_line_date_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="21dp"
+                    android:background="#dddddd"
+                    app:layout_constraintTop_toBottomOf="@+id/deactivate_layout" />
+
+                <TextView
+                    android:id="@+id/step_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="스텝 수"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_date_btn" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/step_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="214dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/mp_chart_background"
+                    app:layout_constraintTop_toBottomOf="@+id/step_tv" />
+
+                <TextView
+                    android:id="@+id/accuracys_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="스텝 수"
+                    android:textColor="#444444"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@+id/step_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/step_chart" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/accuracy_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="214dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/mp_chart_background"
+                    app:layout_constraintTop_toBottomOf="@+id/accuracys_tv" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintTop_toBottomOf="@+id/accuracy_chart" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

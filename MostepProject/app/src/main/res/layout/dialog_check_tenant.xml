@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_top_leftright_corners_5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="362dp"
+            android:layout_height="277dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/warning_iv"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="55dp"
+                android:src="@drawable/warning_icon2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tenant_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="6dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="성남종합운동장"
+                android:textColor="#0064c8"
+                android:textSize="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/warning_iv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/notosans_regular"
+                android:gravity="center"
+                android:text="기관 인증이 확인되었습니다."
+                android:textColor="#666666"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tenant_name_tv" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.6dp"
+                android:background="#0064C8"
+                app:layout_constraintBottom_toTopOf="@+id/check_btn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/check_btn"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/corners_bottom_right_5_back_0064c8"
+                android:fontFamily="@font/notosans_bold"
+                android:gravity="center"
+                android:text="확인"
+                android:textColor="#fff500"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
