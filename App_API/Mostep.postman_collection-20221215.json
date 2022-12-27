@@ -1,0 +1,4695 @@
+{
+	"info": {
+		"_postman_id": "1d93e900-88c0-4cb3-9add-8edce70f0b83",
+		"name": "Mostep",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7523365"
+	},
+	"item": [
+		{
+			"name": "인증",
+			"item": [
+				{
+					"name": "테넌트체크",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantCode\": \"SYSTEM\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/check-tenant",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"check-tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "시스템관리자 로그인",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantId\": 1,\r\n    \"loginId\":\"admin\",\r\n    \"password\":\"qwer1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/login",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트관리자 로그인",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantId\": 2,\r\n    \"loginId\":\"tenantadmin1\",\r\n    \"password\":\"qwer1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/login",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너 로그인",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ko",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantId\": 2,\r\n    \"loginId\":\"trainer1\",\r\n    \"password\":\"qwer1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/login",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원 로그인",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantId\": 17,\r\n    \"loginId\":\"member1\",\r\n    \"password\":\"qwer1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/login",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "비밀번호변경",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ko",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"qwer1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/change-password",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내정보수정(트레이너)(삭제됨)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tel\" : \"010-1111-2222\",\r\n    \"email\" : \"trainer1@naver.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/myinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"myinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내정보수정(트레이너)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tel",
+									"value": "010-1111-2222",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "trainer1@naver.com",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mycar.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/myinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"myinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내정보수정(회원)(삭제됨)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userNm\" : \"회원1\",\r\n    \"gender\" : \"F\",\r\n    \"height\" : 160,\r\n    \"weight\" : 60,\r\n    \"birthday\" : \"1955-01-01\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/myinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"myinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내정보수정(회원)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userNm",
+									"value": "회원1",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "F",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "161.2",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "59.8",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1955-01-01",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mysign.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/myinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"myinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "로그아웃",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/auth/logout",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "세션정보조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/session-info",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"session-info"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "테넌트",
+			"item": [
+				{
+					"name": "테넌트목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/tenants?pageNo=1&pageSize=5&keyword=성",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"tenants"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "keyword",
+									"value": "성"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantNm\" : \"성남체육센터\",\r\n    \"tel\" : \"010-0000-0000\",\r\n    \"address1\" : \"성남시\",\r\n    \"address2\" : \"101번지 1호\",\r\n    \"zipcode\" : \"123456\",\r\n    \"tenantCode\": \"ABC1\",\r\n    \"email\" : \"ABC1@aiblab.co.kr\",\r\n    \"tenantManager\": {\r\n                    \"loginId\": \"tenantadmin1\",\r\n                    \"password\": \"$2a$10$YO39MS2F9ZzZLGZ3lcCpAOvN5Va7VJCWqPWOsgxeWkXnqYR5.5Bw2\",\r\n                    \"userNm\": \"Tenant Admin 1\",\r\n                    \"tel\": \"010-0000-0000\",\r\n                    \"email\": \"tenantadmin1@aiblab.co.kr\"\r\n                }    \r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/tenants",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"tenants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tenantNm\" : \"성남체육센터\",\r\n    \"tel\" : \"010-0000-0000\",\r\n    \"address1\" : \"성남시\",\r\n    \"address2\" : \"101번지 2호\",\r\n    \"zipcode\" : \"123456\",\r\n    \"tenantCode\": \"ABC1\",\r\n    \"email\" : \"ABC1@aiblab.co.kr\",\r\n    \"tenantManager\": {\r\n                    \"userId\": 19,\r\n                    \"loginId\": \"tenantadmin1\",\r\n                    \"userNm\": \"Tenant Admin 1\",\r\n                    \"tel\": \"010-0000-0001\",\r\n                    \"email\": \"tenantadmin1@aiblab.co.kr\"\r\n                }    \r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/tenants/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"tenants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/tenants/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"tenants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "대시보드",
+			"item": [
+				{
+					"name": "카운트",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/statistics/total-count",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"statistics",
+								"total-count"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "최근운동한클래스회차",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/recent-exercise-classunits",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"recent-exercise-classunits"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "최근운동한클래스회차회원",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1/classunits/1/recent-exercise-members",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1",
+								"classunits",
+								"1",
+								"recent-exercise-members"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "회원",
+			"item": [
+				{
+					"name": "회원목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loginId",
+									"value": "member9",
+									"type": "text"
+								},
+								{
+									"key": "userNm",
+									"value": "회원9",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwer1234",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "F",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1950-01-01",
+									"type": "text"
+								},
+								{
+									"key": "tel",
+									"value": "010-0000-0000",
+									"type": "text"
+								},
+								{
+									"key": "address1",
+									"value": "서울시",
+									"type": "text"
+								},
+								{
+									"key": "address2",
+									"value": "101번지 1호",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "nfcId",
+									"value": "000001",
+									"type": "text"
+								},
+								{
+									"key": "guardianNm",
+									"value": "회원2보호자",
+									"type": "text"
+								},
+								{
+									"key": "guardianTel",
+									"value": "010-0000-1234",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mycar.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loginId",
+									"value": "member9",
+									"type": "text"
+								},
+								{
+									"key": "userNm",
+									"value": "회원9",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwer1234",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "F",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1950-01-01",
+									"type": "text"
+								},
+								{
+									"key": "tel",
+									"value": "010-0000-0000",
+									"type": "text"
+								},
+								{
+									"key": "address1",
+									"value": "서울시",
+									"type": "text"
+								},
+								{
+									"key": "address2",
+									"value": "101번지 1호",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "nfcId",
+									"value": "000001",
+									"type": "text"
+								},
+								{
+									"key": "guardianNm",
+									"value": "회원2보호자",
+									"type": "text"
+								},
+								{
+									"key": "guardianTel",
+									"value": "010-0000-1234",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mysign.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/32",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/2",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "로그인ID 중복체크",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : 5,\r\n    \"loginId\" : \"member2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/users/check-login-id",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"check-login-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email 중복체크",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loginId\" : \"member2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/users/check-login-id",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"check-login-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사진다운로드",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "트레이너",
+			"item": [
+				{
+					"name": "트레이너목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loginId",
+									"value": "trainer5",
+									"type": "text"
+								},
+								{
+									"key": "userNm",
+									"value": "트레이너5",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "F",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1980-01-01",
+									"type": "text"
+								},
+								{
+									"key": "address1",
+									"value": "서울시",
+									"type": "text"
+								},
+								{
+									"key": "address2",
+									"value": "101번지 2호",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "모스텝 트레이너 경력 2년차",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mysign.png"
+								},
+								{
+									"key": "tel",
+									"value": "010-1234-9876",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwer1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loginId",
+									"value": "trainer5",
+									"type": "text"
+								},
+								{
+									"key": "userNm",
+									"value": "트레이너5",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "F",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1980-01-01",
+									"type": "text"
+								},
+								{
+									"key": "address1",
+									"value": "서울시",
+									"type": "text"
+								},
+								{
+									"key": "address2",
+									"value": "101번지 2호",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "모스텝 트레이너 경력 2년차",
+									"type": "text"
+								},
+								{
+									"key": "pictureFile",
+									"type": "file",
+									"src": "/C:/Data/JSPark/mycar.jpg"
+								},
+								{
+									"key": "tel",
+									"value": "010-1234-9876",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers/31",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers/4",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너의클래스목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers/3/classes",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers",
+								"3",
+								"classes"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "공지사항",
+			"item": [
+				{
+					"name": "시스템공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/system?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"system"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "시스템공지사항추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"시스템 공지사항 1\",\r\n    \"contents\" : \"시스템 공지사항입니다. \\n 성남점 오픈합니다.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/system",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"system"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트공지사항추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"테넌트 공지사항 1\",\r\n    \"contents\" : \"테넌트 공지사항입니다. \\n광복절 휴관합니다.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant?classId=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "classId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스공지사항추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classId\" : 1,\r\n    \"title\" : \"테넌트 공지사항 1\",\r\n    \"contents\" : \"테넌트 공지사항입니다. \\n광복절 휴관합니다.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "전체공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "공지사항수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"시스템 공지사항 1\",\r\n    \"contents\" : \"시스템 공지사항입니다. \\n 성남점 오픈합니다..\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/9",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "공지사항삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/9",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "패턴그룹",
+			"item": [
+				{
+					"name": "패턴그룹목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterns?patternLevelId=6&keyword=4",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterns"
+							],
+							"query": [
+								{
+									"key": "patternLevelId",
+									"value": "6"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴레벨목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patternlevels",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patternlevels"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴그룹조회",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴그룹추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patternGroupNm\": \"초급1단계 패턴그룹\",\r\n    \"description\" : \"초급1단계 패턴그룹입니다. \\n가장 쉬운단계입니다.\",\r\n    \"patternGroupRoundList\" : [\r\n        {\r\n            \"patternGroupRoundNo\" : 1,\r\n            \"patternId\":1\r\n        },\r\n        {\r\n            \"patternGroupRoundNo\" : 2,\r\n            \"patternId\":1\r\n        },\r\n        {\r\n            \"patternGroupRoundNo\" : 3,\r\n            \"patternId\":2\r\n        },\r\n        {\r\n            \"patternGroupRoundNo\" : 4,\r\n            \"patternId\":2\r\n        }                            \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴그룹수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patternGroupNm\": \"초급1단계 패턴그룹\",\r\n    \"description\" : \"[수정]초급1단계 패턴그룹입니다. \\n가장 쉬운단계입니다.\"\r\n   \r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups/2",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴그룹삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups/2",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "클래스",
+			"item": [
+				{
+					"name": "클래스목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스조회",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/4",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classNm\": \"초급2단계 월수금 강좌\",\r\n    \"description\" : \"초급2단계 월수금 강좌입니다. \\n수시모집입니다.\",\r\n    \"startDate\" : \"2022-10-10\",\r\n    \"endDate\" : \"2022-12-10\",\r\n    \"startTime\" : \"10:00\",\r\n    \"endTime\" : \"12:00\",\r\n    \"dayOfWeek\" : \"1,3,5\",\r\n    \"classUnitList\" : [\r\n        {\r\n            \"classUnitNo\" : 1,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 1회차\",\r\n            \"description\" : \"초급1단계 월수금 1회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-10 10:00\",\r\n            \"endDateTime\" : \"2022-10-10 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 2,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 2회차\",\r\n            \"description\" : \"초급1단계 월수금 2회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-12 10:00\",\r\n            \"endDateTime\" : \"2022-10-12 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 3,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 3회차\",\r\n            \"description\" : \"초급1단계 월수금 3회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-14 10:00\",\r\n            \"endDateTime\" : \"2022-10-14 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 4,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 4회차\",\r\n            \"description\" : \"초급1단계 월수금 4회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-17 10:00\",\r\n            \"endDateTime\" : \"2022-10-17 12:00\"\r\n        }                           \r\n    ],\r\n    \"classMemberList\" : [\r\n        {\r\n            \"userId\" : 4\r\n        }\r\n    ],\r\n    \"classTrainerList\" : [\r\n        {\r\n            \"userId\" : 8\r\n        }\r\n    ]    \r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classNm\": \"초급1단계 월수금 강좌\",\r\n    \"description\" : \"초급1단계 월수금 강좌입니다. \\n수시모집입니다.\",\r\n    \"startDate\" : \"2022-10-10\",\r\n    \"endDate\" : \"2022-12-10\",\r\n    \"startTime\" : \"10:00\",\r\n    \"endTime\" : \"12:00\",\r\n    \"dayOfWeek\" : \"1,3,5\",\r\n    \"classUnitList\" : [\r\n        {\r\n            \"classUnitNo\" : 1,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 1회차\",\r\n            \"description\" : \"초급1단계 월수금 1회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-10 10:00\",\r\n            \"endDateTime\" : \"2022-10-10 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 2,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 2회차\",\r\n            \"description\" : \"초급1단계 월수금 2회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-12 10:00\",\r\n            \"endDateTime\" : \"2022-10-12 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 3,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 3회차\",\r\n            \"description\" : \"초급1단계 월수금 3회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-14 10:00\",\r\n            \"endDateTime\" : \"2022-10-14 12:00\"\r\n        },\r\n        {\r\n            \"classUnitNo\" : 4,\r\n            \"patternGroupId\" : 1,\r\n            \"classUnitNm\":\"초급1단계 월수금 강좌 5회차\",\r\n            \"description\" : \"초급1단계 월수금 5회차 강좌입니다.\",\r\n            \"startDateTime\" : \"2022-10-17 10:00\",\r\n            \"endDateTime\" : \"2022-10-17 12:00\"\r\n        }                           \r\n    ],\r\n    \"classMemberList\" : [\r\n        {\r\n            \"userId\" : 3\r\n        }\r\n    ],\r\n    \"classTrainerList\" : [\r\n        {\r\n            \"userId\" : 4\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/4",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원의클래스목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/classes",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"classes"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스의회원목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1/members?classUnitNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1",
+								"members"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "classUnitNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "최근운동한클래스의클래스회차목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1/recent-exercise-classunits",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1",
+								"recent-exercise-classunits"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스운동기록요약",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1/exercises/summary",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1",
+								"exercises",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "회원등급",
+			"item": [
+				{
+					"name": "회원등급계산",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loginId\" : \"member2\",\r\n    \"userNm\" : \"회원2\",\r\n    \"password\" : \"qwer1234\",\r\n    \"gender\" : \"F\",\r\n    \"birthday\" : \"1950-01-01\",\r\n    \"tel\" : \"010-0000-0000\",\r\n    \"address1\" : \"서울시\",\r\n    \"address2\" : \"101번지 1호\",\r\n    \"zipcode\" : \"123456\",    \r\n    \"nfcId\" : \"000001\",\r\n    \"guardianNm\" : \"회원1보호자\",\r\n    \"guardianTel\" : \"010-0000-1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "운동기록",
+			"item": [
+				{
+					"name": "회원상세-운동기록요약목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary-history?startDate=2022-10-01&endDate=2022-12-31&?pageNo=1&pageSize=20",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary-history"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-12-31"
+								},
+								{
+									"key": "?pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원상세-운동메모목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercise-memos?userId=3&pageNo=1&pageSize=7&startDate=2022-10-01&endDate=2022-10-20",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercise-memos"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "건강기록",
+			"item": [
+				{
+					"name": "건강기록목록 일상체력지수",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness?startDate=2022-10-01&endDate=2022-10-10&pageNo=1&pageSize=10",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 일상체력지수 나이대평균",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness/agegroup-avg",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness",
+								"agegroup-avg"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 일상체력지수 나이대랭킹",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness/agegroup-rank",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness",
+								"agegroup-rank"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록추가 일상체력지수",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthFitnessList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"gripLeft\" : 10,\r\n            \"grpRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 10,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                         \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-03\",\r\n            \"gripLeft\" : 10,\r\n            \"grpRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 10,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                     \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"gripLeft\" : 10,\r\n            \"grpRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 10,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                        \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록수정 일상체력지수",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthFitnessList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"gripLeft\" : 10,\r\n            \"gripRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 10,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                         \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-03\",\r\n            \"gripLeft\" : 10,\r\n            \"gripRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 10,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                     \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"gripLeft\" : 10,\r\n            \"gripRight\" : 23,\r\n            \"chairSitAndStand\" : 13,\r\n            \"armCurl\" : 3,\r\n            \"oneLegBalanceLeft\" : 10,\r\n            \"oneLegBalanceRight\" : 10,\r\n            \"layDownAndStandUp\" : 10,\r\n            \"timedUpAndGo\" : 10,\r\n            \"functionalReach\" : 10,\r\n            \"walkingEightShaped\" : 10,\r\n            \"carryingBeans\" : 10,\r\n            \"pegboard\" : 10,\r\n            \"hanitualWalking5m\" : 10,\r\n            \"maximumWalking5m\" : 11,                                                                                                            \r\n            \"chariReach\" : 10,                                                                                                            \r\n            \"tandemWalk3m\" : 10,                                                                                                            \r\n            \"regEnduranceAgainstWall\" : 10                                                                                                        \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록삭제 일상체력지수",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/fitness/2022-10-01",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"fitness",
+								"2022-10-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록목록 장수연령",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity?startDate=2022-10-01&endDate=2022-10-10&pageNo=1&pageSize=10",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 장수연력 나이대평균",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity/agegroup-avg",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity",
+								"agegroup-avg"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 장수연력 나이대랭킹",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity/agegroup-rank",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity",
+								"agegroup-rank"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록추가 장수연령",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthLongevityList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 54,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,                                                                                                            \r\n            \"waistCircumference\" : 80                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-02\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 54,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,                                                                                                            \r\n            \"waistCircumference\" : 80                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-03\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 54,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,                                                                                                            \r\n            \"waistCircumference\" : 80                                                                                                       \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록수정 장수연령",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthLongevityList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 54,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,                                                                                                            \r\n            \"waistCircumference\" : 80                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-02\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 55,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,                                                                                                            \r\n            \"waistCircumference\" : 80                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-03\",\r\n            \"height\" : 155.3,\r\n            \"weight\" : 56,\r\n            \"bloodPressureSystolic\" : 80,\r\n            \"bloodPressureDiastolic\" : 100,\r\n            \"hyperlipidemiaYn\" : \"Y\",                                                                                                            \r\n            \"bloodFlowSpeed\" : 100,\r\n            \"waistCircumference\" : 90                                                                                                                                                                                                                        \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록삭제 장수연령",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity/2022-10-03",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity",
+								"2022-10-03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록목록 인지측정지수",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive?startDate=2022-10-01&endDate=2022-10-10&pageNo=1&pageSize=10",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 인지측정지수 나이대평균",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive/agegroup-avg",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive",
+								"agegroup-avg"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 인지측정지수 나이대랭킹",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive/agegroup-rank",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive",
+								"agegroup-rank"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록추가 인지측정지수",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthCognitiveList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 10                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 10                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 10                                                                                                       \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록수정 인지측정지수",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthCognitiveList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 10                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 10                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"spaceTimePerformance\" : 20,\r\n            \"vocabulary\" : 30,\r\n            \"memory\" : 15,\r\n            \"attention\" : 20.5,\r\n            \"writingSkills\" : 11.2,                                                                                                            \r\n            \"abstractPower\" : 30,                                                                                                            \r\n            \"orientation\" : 11                                                                                                  \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록삭제 인지측정지수",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/cognitive/2022-10-07",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"cognitive",
+								"2022-10-07"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록목록 뇌기능척도",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain?startDate=2022-10-01&endDate=2022-10-10&pageNo=1&pageSize=10",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 뇌기능척도 나이대평균",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain/agegroup-avg",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain",
+								"agegroup-avg"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 뇌기능척도 나이대랭킹",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain/agegroup-rank",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain",
+								"agegroup-rank"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록추가 뇌기능척도",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthBrainList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.5                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.5                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.5                                                                                                       \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록수정 뇌기능척도",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthBrainList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.5                                                                                                            \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.5                                                                                                      \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"reactionRate\" : 20,\r\n            \"attention\" : 30,\r\n            \"visualLearning\" : 15,\r\n            \"memory\" : 20.7                                                                                                       \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록삭제 뇌기능척도",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/brain/2022-10-01",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"brain",
+								"2022-10-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록목록 행복요인",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness?startDate=2022-10-01&endDate=2022-10-10&pageNo=1&pageSize=10",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 행복요인 나이대평균",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness/agegroup-avg",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness",
+								"agegroup-avg"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록 행복요인 나이대랭킹",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness/agegroup-rank",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness",
+								"agegroup-rank"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록추가 행복요인",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthHappinessList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 20\r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 20                                                                                                  \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 20                                                                                                      \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록수정 행복요인",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userHealthHappinessList\" : [\r\n        {\r\n            \"recordDate\" : \"2022-10-01\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 20\r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-05\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 20                                                                                                  \r\n        },\r\n        {\r\n            \"recordDate\" : \"2022-10-07\",\r\n            \"physical\" : 20,\r\n            \"mental\" : 30,\r\n            \"emotional\" : 15,\r\n            \"professional\" : 20.5,                                                                                                            \r\n            \"intellectual\" : 20,\r\n            \"environmental\" : 20,\r\n            \"economical\" : 20,\r\n            \"social\" : 20,\r\n            \"spiritual\" : 20,\r\n            \"medical\" : 30                                                                                                      \r\n        }                      \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "건강기록삭제 행복요인",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/happiness/2022-10-01",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"happiness",
+								"2022-10-01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "트레이너앱",
+			"item": [
+				{
+					"name": "트레이너클래스회차목록(삭제됨)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/classunits/trainer?startDateTime=2022-10-09 00:01&endDateTime=2022-11-10 23:59&trainerId=7",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"classunits",
+								"trainer"
+							],
+							"query": [
+								{
+									"key": "startDateTime",
+									"value": "2022-10-09 00:01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDateTime",
+									"value": "2022-11-10 23:59"
+								},
+								{
+									"key": "trainerId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "트레이너의클래스회차목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/trainers/4/classunits?startDateTime=2022-10-09 00:01&endDateTime=2022-11-10 23:59",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"trainers",
+								"4",
+								"classunits"
+							],
+							"query": [
+								{
+									"key": "startDateTime",
+									"value": "2022-10-09 00:01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDateTime",
+									"value": "2022-11-10 23:59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스회차회원목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/classes/1/classunits/1/members",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"classes",
+								"1",
+								"classunits",
+								"1",
+								"members"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴그룹조회",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/patterngroups/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patterngroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant?classId=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "classId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "시스템+테넌트공지사항목록(삭제됨)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/system-tenant?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"system-tenant"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "전체공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members?pageNo=1&pageSize=10&keyword=회원4",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "회원4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "클래스운동기록추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classId\" : 1,\r\n    \"classUnitNo\" : 3,\r\n    \"patternGroupId\" : 1,            \r\n    \"userExerciseList\" : [\r\n        {\r\n            \"userId\" : 3,\r\n            \"startDateTime\" : \"2022-10-10 10:10:01\",\r\n            \"endDateTime\" : \"2022-10-10 10:12:00\",\r\n            \"patternId\" : 1,\r\n            \"takenSecond\" : 10.5,\r\n            \"stepCount\" : 10,\r\n            \"totalStepCount\" : 23,\r\n            \"wrongStepCount\" : 13,\r\n            \"completeYn\" : \"Y\",\r\n            \"patternGroupRoundNo\" : 1,\r\n            \"stepList\" : [\r\n                {\r\n                    \"takenSecond\" : 0.5,\r\n                    \"spaceNo\" : 2,\r\n                    \"wrongYn\" : \"N\"\r\n                },\r\n                {\r\n                    \"takenSecond\" : 0.7,\r\n                    \"spaceNo\" : 5,\r\n                    \"wrongYn\" : \"N\"\r\n                }                \r\n            ]\r\n        },\r\n        {\r\n            \"userId\" : 3,\r\n            \"startDateTime\" : \"2022-10-10 11:10:01\",\r\n            \"endDateTime\" : \"2022-10-10 11:12:00\",\r\n            \"patternId\" : 1,\r\n            \"takenSecond\" : 10,\r\n            \"stepCount\" : 10,\r\n            \"totalStepCount\" : 23,\r\n            \"wrongStepCount\" : 13,\r\n            \"completeYn\" : \"Y\",\r\n            \"patternGroupRoundNo\" : 2,\r\n            \"stepList\" : [\r\n                {\r\n                    \"takenSecond\" : 1,\r\n                    \"spaceNo\" : 2,\r\n                    \"wrongYn\" : \"N\"\r\n                },\r\n                {\r\n                    \"takenSecond\" : 1.2,\r\n                    \"spaceNo\" : 5,\r\n                    \"wrongYn\" : \"Y\"\r\n                }                \r\n            ]            \r\n        }          \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercises/class",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercises",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원최근운동기록요약목록(삭제됨)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/exercises/summary-recent-history",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"exercises",
+								"summary-recent-history"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록요약목록(월별)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/exercises/summary-history-monthly?startDate=2022-01-01&endDate=2022-12-31",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"exercises",
+								"summary-history-monthly"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2022-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록요약목록(일별)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary-history-daily?startDate=2022-01-01&endDate=2022-12-31",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary-history-daily"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2022-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록요약",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록클래스회차별요약",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary-by-classunit?classId=1&classUnitNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary-by-classunit"
+							],
+							"query": [
+								{
+									"key": "classId",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "classUnitNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록최근클래스회차별요약",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary-by-recent-classunit",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary-by-recent-classunit"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "운동메모목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercise-memos?pageNo=1&pageSize=7&userId=3",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercise-memos"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								},
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "운동메모목록(단일항목)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercise-memos?userId=3&classId=1&classUnitNo=2",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercise-memos"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "classId",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "classUnitNo",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "운동메모추가",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classId\" : 1,\r\n    \"classUnitNo\" : 1,\r\n    \"userId\" : 3,            \r\n    \"dizziness\" : 1,\r\n    \"userCondition\" : 2,\r\n    \"concentration\" : 2,\r\n    \"kneeMovementAccuracy\" : 2,\r\n    \"overall\": 3,\r\n    \"breath\" : 4,\r\n    \"memo\" : \"클래스 운동메모입니다. \\n전반적으로 좋아지고 있습니다.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercise-memos",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercise-memos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "운동메모수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dizziness\" : 1,\r\n    \"userCondition\" : 2,\r\n    \"kneeMovementAccuracy\" : 2,\r\n    \"overall\": 3,\r\n    \"breath\" : 4,\r\n    \"memo\" : \"클래스 운동메모입니다. \\n전반적으로 좋아지고 있습니다...\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/exercise-memos?classId=1&classUnitNo=1&userId=3",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"exercise-memos"
+							],
+							"query": [
+								{
+									"key": "classId",
+									"value": "1"
+								},
+								{
+									"key": "classUnitNo",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원최근건강기록목록(삭제됨)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/health-records?pageNo=1&pageSize=7",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"health-records"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원최근건강기록목록 장수연령",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity?pageNo=1&pageSize=7",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "사용자앱",
+			"item": [
+				{
+					"name": "회원의클래스회차목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/classunits?startDateTime=2022-10-09 00:01&endDateTime=2022-11-10 23:59",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"classunits"
+							],
+							"query": [
+								{
+									"key": "startDateTime",
+									"value": "2022-10-09 00:01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDateTime",
+									"value": "2022-11-10 23:59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원운동기록요약",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/exercises/summary",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"exercises",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "테넌트+클래스공지사항목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/boards/tenant-class?pageNo=1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"boards",
+								"tenant-class"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원최근건강기록목록(삭제됨)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/3/health-records?pageNo=1&pageSize=7",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"3",
+								"health-records"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원최근건강기록목록 장수연령",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjUwMDh9.1e3bhTiKqFSfwmaMpC6zG-XS8mvgj8DKxmBErITd7u-5UFr5VZfiThGyHUi5KklJb8QbtrbVB4yHgnvJDCpTcw"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/members/5/health-records/longevity?pageNo=1&pageSize=7",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"members",
+								"5",
+								"health-records",
+								"longevity"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AI 모델 개발",
+			"item": [
+				{
+					"name": "회원목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.ms-excel"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/aimodel/members",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"aimodel",
+								"members"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "패턴목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.ms-excel"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/aimodel/patterns",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"aimodel",
+								"patterns"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사용자 운동정보 조회(최근 n)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.ms-excel"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/aimodel/recent-user-exercises?userId=3&limit=100",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"aimodel",
+								"recent-user-exercises"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사용자 운동정보 조회(기간)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.ms-excel"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{ip}}:{{port}}/api/aimodel/user-exercises?userId=3&startDate=2022-01-01&endDate=2022-12-31",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"aimodel",
+								"user-exercises"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqc3BhcmsiLCJleHAiOjE1OTcyMjQ4Mzl9.XA9cPjceyoyr0VLHWXCRevgKdSgtfE8C_nW-P-3Th-PayHi8n-wSA53lwMbCXQU9yBSTmt_ReXQ8Cu4FEqIevw",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2022-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
